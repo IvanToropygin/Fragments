@@ -28,7 +28,6 @@ class FragmentBB : Fragment() {
         binding.btnSendColorToBa.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.ba_container, newInstance(ColorGenerator.generateColor()))
-                .addToBackStack(null)
                 .commit()
         }
     }

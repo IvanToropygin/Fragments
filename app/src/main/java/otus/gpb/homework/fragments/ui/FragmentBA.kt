@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import otus.gpb.homework.fragments.COLOR_KEY
 import otus.gpb.homework.fragments.R
 import otus.gpb.homework.fragments.databinding.FragmentBaBinding
 
@@ -22,7 +23,7 @@ class FragmentBA : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         color = savedInstanceState?.getInt(COLOR_KEY) ?: 0
-        color = arguments?.getInt(COLOR_KEY, 0)?: 0
+        color = arguments?.getInt(COLOR_KEY, 0) ?: 0
         _binding = FragmentBaBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -45,6 +46,7 @@ class FragmentBA : Fragment() {
                     }
                 }
             }
+
             else -> throw IllegalArgumentException("Unknown orientation")
         }
     }
@@ -55,7 +57,6 @@ class FragmentBA : Fragment() {
     }
 
     companion object {
-        private const val COLOR_KEY = "COLOR"
         fun newInstance(color: Int) = FragmentBA().apply {
             arguments = Bundle().apply {
                 putInt(COLOR_KEY, color)

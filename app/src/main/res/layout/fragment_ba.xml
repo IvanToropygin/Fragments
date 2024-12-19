@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/open_fragment_bb"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_fragment_ba"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_fragment_ba" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,11 @@
 package otus.gpb.homework.fragments.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import otus.gpb.homework.fragments.COLOR_KEY
 import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
 import otus.gpb.homework.fragments.databinding.FragmentABinding
@@ -25,8 +25,8 @@ class FragmentA : Fragment() {
         step = savedInstanceState?.getInt(STEP_KEY) ?: 0
         color = savedInstanceState?.getInt(COLOR_KEY) ?: 0
         _binding = FragmentABinding.inflate(inflater, container, false)
-        step = arguments?.getInt(STEP_KEY, 0)?: 0
-        color = arguments?.getInt(COLOR_KEY, 0)?: 0
+        step = arguments?.getInt(STEP_KEY, 0) ?: 0
+        color = arguments?.getInt(COLOR_KEY, 0) ?: 0
         val title = binding.textView
         val button = binding.btnOpenNextA
         val tvStep = binding.textViewStep
@@ -37,11 +37,13 @@ class FragmentA : Fragment() {
                 button.text = getString(R.string.open_fragment_, "AA")
                 tvStep.text = getString(R.string.step, step)
             }
+
             1 -> {
                 title.text = getString(R.string.fragment_name, "AA")
                 button.text = getString(R.string.open_fragment_, "AB")
                 tvStep.text = getString(R.string.step, step)
             }
+
             2 -> {
                 title.text = getString(R.string.fragment_name, "AB")
                 button.text = "No more step"
@@ -77,9 +79,8 @@ class FragmentA : Fragment() {
         _binding = null
     }
 
-    companion object{
+    companion object {
         private const val STEP_KEY = "STEP"
-        private const val COLOR_KEY = "COLOR"
         fun newInstance(step: Int, color: Int) = FragmentA().apply {
             arguments = Bundle().apply {
                 putInt(STEP_KEY, step)
