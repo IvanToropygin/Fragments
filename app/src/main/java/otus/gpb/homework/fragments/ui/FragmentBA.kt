@@ -51,6 +51,11 @@ class FragmentBA : Fragment() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(COLOR_KEY, color)
+        super.onSaveInstanceState(outState)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
