@@ -14,8 +14,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnStartFragmentA.setOnClickListener {
+        binding.btnStartTask1.setOnClickListener {
             startActivity(Intent(this, ActivityA::class.java))
+        }
+
+        binding.btnStartTask2.setOnClickListener {
+            startActivity(Intent(this, ActivityB::class.java))
         }
     }
 }

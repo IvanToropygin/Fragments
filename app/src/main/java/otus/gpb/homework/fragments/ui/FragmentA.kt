@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import otus.gpb.homework.fragments.ColorGenerator
 import otus.gpb.homework.fragments.R
@@ -19,13 +18,12 @@ class FragmentA : Fragment() {
     private var step = 0
     private var color = 0
 
-    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         step = savedInstanceState?.getInt(STEP_KEY) ?: 0
-        color = savedInstanceState?.getInt(STEP_KEY) ?: 0
+        color = savedInstanceState?.getInt(COLOR_KEY) ?: 0
         _binding = FragmentABinding.inflate(inflater, container, false)
         step = arguments?.getInt(STEP_KEY, 0)?: 0
         color = arguments?.getInt(COLOR_KEY, 0)?: 0
