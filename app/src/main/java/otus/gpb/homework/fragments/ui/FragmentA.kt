@@ -58,10 +58,11 @@ class FragmentA : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.setBackgroundColor(color)
+        val newColor = ColorGenerator.generateColor()
         binding.btnOpenNextA.setOnClickListener {
             step++
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_a_container, newInstance(step, color))
+                .replace(R.id.fragment_a_container, newInstance(step, newColor))
                 .addToBackStack(null)
                 .commit()
         }
@@ -84,7 +85,7 @@ class FragmentA : Fragment() {
         fun newInstance(step: Int, color: Int) = FragmentA().apply {
             arguments = Bundle().apply {
                 putInt(STEP_KEY, step)
-                putInt(COLOR_KEY, ColorGenerator.generateColor())
+                putInt(COLOR_KEY, color)
             }
         }
     }
