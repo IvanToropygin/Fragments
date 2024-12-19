@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="start_activity">Start Activity</string>
+    <string name="start_fragment_a">Start Fragment A</string>
+    <string name="open_fragment_aa">Open fragment AA</string>
+    <string name="open_fragment_ab">Open fragment AB</string>
+    <string name="fragment_a">Fragment A</string>
+    <string name="fragment_aa">Fragment AA</string>
+    <string name="fragment_ab">Fragment AB</string>
+    <string name="fragment_ba">Fragment BA</string>
+    <string name="fragment_bb">Fragment BB</string>
+    <string name="step">Step: %1$d</string>
+    <string name="open_fragment_">Open Fragment: %1$s</string>
+    <string name="fragment_name">Fragment: %1$s</string>
 </resources>
