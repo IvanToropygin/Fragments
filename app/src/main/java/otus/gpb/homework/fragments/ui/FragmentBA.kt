@@ -40,7 +40,7 @@ class FragmentBA : Fragment() {
                     btnOpenBb.isVisible = true
                     btnOpenBb.setOnClickListener {
                         parentFragmentManager.beginTransaction()
-                            .replace(R.id.bb_container, FragmentBB())
+                            .replace(R.id.ba_container, FragmentBB())
                             .commit()
                     }
                 }
