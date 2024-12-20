@@ -15,4 +15,6 @@
     <string name="fragment_name">Fragment: %1$s</string>
     <string name="send_color_to_ba">Send color to BA</string>
     <string name="open_fragment_bb">Open Fragment BB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
