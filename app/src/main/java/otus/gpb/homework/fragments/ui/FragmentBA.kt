@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResultListener
 import otus.gpb.homework.fragments.COLOR_KEY
 import otus.gpb.homework.fragments.R
 import otus.gpb.homework.fragments.databinding.FragmentBaBinding
@@ -49,6 +51,12 @@ class FragmentBA : Fragment() {
 
             else -> throw IllegalArgumentException("Unknown orientation")
         }
+
+        setFragmentResultListener(COLOR_KEY) { _, bundle ->
+            val color = bundle.getInt(COLOR_KEY)
+            view.findViewById<ConstraintLayout>(R.id.fragment_ba_container)
+                .setBackgroundColor(color)
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -59,13 +67,5 @@ class FragmentBA : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        fun newInstance(color: Int) = FragmentBA().apply {
-            arguments = Bundle().apply {
-                putInt(COLOR_KEY, color)
-            }
-        }
     }
 }
